@@ -16,33 +16,31 @@
 
 namespace Lightim\Library\General\Address;
 
-use Lightim\Library\General\Address\Postic\Service;
-
-class Postic implements AddressInterface
+class User implements AddressInterface
 {
     /**
-     * Postic Service Domain
+     * User's Identify
      *
      * @var string
      */
-    public $domain = 'postic.default-services.lightim.pw';
+    public $identify = '';
 
     /**
-     * Postic Service Connection Info
+     * Postic Address
      *
-     * @var Service
+     * @var Postic
      */
-    public $service;
+    public $postic;
 
     /**
      * Constructor
      *
-     * @param string $domain
-     * @param Service $service
+     * @param string $name
+     * @param Postic $postic
      */
-    public function __construct(string $domain, Service $service)
+    public function __construct(string $identify, Postic $postic)
     {
-        $this->domain = $domain;
-        $this->service = $service;
+        $this->identify = $identify;
+        $this->postic = $postic;
     }
 }
